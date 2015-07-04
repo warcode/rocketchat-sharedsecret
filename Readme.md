@@ -1,0 +1,1 @@
+Shared secret encryption for Rocket.Chat
