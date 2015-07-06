@@ -13,9 +13,9 @@ Package.onUse(function(api) {
 		'rocketchat:lib@0.0.1'
 	]);
 
-	api.use(['jparker:crypto-aes'], 'client');
+	api.use(['jparker:crypto-aes'], ['server','client']);
 
-	api.addFiles('sharedsecret.coffee', 'client');
+	api.addFiles('sharedsecret.coffee', ['server','client']);
 });
 
 Package.onTest(function(api) {});
