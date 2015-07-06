@@ -20,7 +20,7 @@ if (Meteor.isClient)
 				decrypted = CryptoJS.AES.decrypt(message.msg, SharedSecret)
 				messageString = decrypted.toString(CryptoJS.enc.Utf8)
 				console.log("decrypted message " + messageString)
-				message.html = messageString
+				message.msg = messageString
 				message.html = messageString
 			return message
 
