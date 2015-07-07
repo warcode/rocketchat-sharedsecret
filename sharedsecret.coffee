@@ -8,8 +8,9 @@ if (Meteor.isServer)
 				message.msg = encrypted.toString()
 
 				#urls
-				for urls in message.urls
-					urls.url = CryptoJS.AES.encrypt(urls.url, SharedSecret).toString()
+				if(message.urls)
+					for urls in message.urls
+						urls.url = CryptoJS.AES.encrypt(urls.url, SharedSecret).toString()
 
 				message.encrypted = true
 				console.log("encrypted message " + message.msg)
@@ -28,8 +29,9 @@ if (Meteor.isClient)
 				message.html = decrypted
 
 				#urls
-				for urls in message.urls
-					urls.url = CryptoJS.AES.decrypt(urls.url, SharedSecret).toString(CryptoJS.enc.Utf8)
+				if(message.urls)
+					for urls in message.urls
+						urls.url = CryptoJS.AES.decrypt(urls.url, SharedSecret).toString(CryptoJS.enc.Utf8)
 
 			return message
 
