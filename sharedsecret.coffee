@@ -1,4 +1,4 @@
-SharedSecret = "SUPERSECRET"
+SharedSecret = "SUPERSECRET" 
 
 if (Meteor.isServer)
 	class EncryptMessage
