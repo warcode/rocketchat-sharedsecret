@@ -39,7 +39,6 @@ if (Meteor.isClient)
 	class DecryptMessage
 		constructor: (message) ->
 			if(message.encrypted)
-				console.log(message.rid)
 				currentRoomId = message.rid
 				currentSecret = localStorage.getItem("rocket.chat.sharedSecretKey.#{currentRoomId}")
 
