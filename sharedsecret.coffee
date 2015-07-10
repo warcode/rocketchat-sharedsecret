@@ -28,7 +28,7 @@ if (Meteor.isServer)
 
 			return message
 
-	RocketChat.callbacks.add 'beforeSaveMessage', EncryptMessage, RocketChat.callbacks.priority.LOW
+	RocketChat.callbacks.add 'beforeSaveMessage', EncryptMessage, 9999 #RocketChat.callbacks.priority.LOW
 
 if (Meteor.isClient)
 	class DecryptMessage
@@ -74,5 +74,5 @@ if (Meteor.isClient)
 				
 			return message
 
-	RocketChat.callbacks.add 'renderMessage', DecryptMessage, RocketChat.callbacks.priority.HIGH
+	RocketChat.callbacks.add 'renderMessage', DecryptMessage, -9999 #RocketChat.callbacks.priority.HIGH
 	RocketChat.callbacks.add 'beforeSaveMessage', EncryptMessage, RocketChat.callbacks.priority.LOW
