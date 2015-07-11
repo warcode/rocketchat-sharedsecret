@@ -49,8 +49,9 @@ if (Meteor.isClient)
 						message.msg = "~ encrypted message ~"
 						message.html = "~ encrypted message ~"
 					else
-						message.msg = decrypted
-						message.html = decrypted
+						lockImage = "/images/lock8.png"
+						message.msg = "<img src=#{lockImage} style='width:8px;height:9px;'></img> " + decrypted
+						message.html = "<img src=#{lockImage} style='width:8px;height:9px;'></img> " + decrypted
 
 					#urls
 					if(message.urls)
